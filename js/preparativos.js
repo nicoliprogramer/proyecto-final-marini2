@@ -1,7 +1,7 @@
 const lista = document.getElementById("lista");
 
 
-fetch("./data.json", { mode: "no-cors" })
+fetch("../data.json", { mode: "no-cors" })
     .then(resp => resp.json())
     .then(preparativos => {
         console.log(preparativos);
@@ -10,7 +10,7 @@ fetch("./data.json", { mode: "no-cors" })
             li.innerHTML = `
                 <h2>${preparativo.nombre}</h2>
                 <p>codigo: ${preparativo.id}</p>
-                <p>${preparativo.img}</p>
+               <img src=${preparativo.img} />
                 <hr/>
             `;
             lista.append(li);

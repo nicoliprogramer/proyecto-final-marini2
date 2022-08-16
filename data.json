@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nombre": "Preparativo 1",
-        "img": "./img/factura.jpg"
+        "img": "../img/factura.jpg"
     },
     {
         "id": 2,

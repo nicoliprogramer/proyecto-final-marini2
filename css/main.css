@@ -8783,3 +8783,21 @@ h3, .h3 {
 
 .card-body {
   width: 110% !important; }
+
+.departament {
+  position: fixed;
+  width: 10px;
+  height: 80px;
+  bottom: 90px;
+  right: 1411px;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100; }
+
+.departament-icon {
+  margin-top: 13px; }
+
+.gracias {
+  background-color: #000000; }

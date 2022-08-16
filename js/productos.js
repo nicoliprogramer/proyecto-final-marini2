@@ -91,7 +91,7 @@ let usuario;
 let usuarioStorage = localStorage.getItem("usuario");
 
 if (usuarioStorage) {
-  usuario = usuarioStorage;
+  usuario = JSON.parse(usuarioStorage);
   Swal.fire({
     title: 'Bienvenido ' + usuario,
     width: 350,
@@ -116,5 +116,5 @@ if (usuarioStorage) {
 
   });
 
-  localStorage.setItem("usuario", usuario);
+  localStorage.setItem("usuario", JSON.stringify(usuario));
 }
