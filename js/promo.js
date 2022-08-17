@@ -1,37 +1,20 @@
-let codigo = prompt("Bienvenido cliente, ingrese código para averiguar beneficios");
-let limite = 0;
-
-while (codigo != "desayunossecretos") {
-    alert("Usted no es cliente actualmente")
-    if (limite === 2) {
-        break;
-    }
-    limite++;
-    codigo = prompt("Intentelo de nuevo...")
-}
-
-if (limite === 2) {
-    alert("Todavia no cuentas con beneficios, escríbenos para averiguarlos")
-} else {
-    alert("¡¡Bienvenido colega, te comentamos tus beneficos!!")
-}
-
+const discountOne = "40% de descuento";
+const discountTwo = "60% de descuento";
 
 const password = (usuario) => {
-    console.log("Password");
     let pass = "";
 
     while (pass == "" || pass == null) {
         pass = prompt(`Ingrese su Contraseña ${usuario}`);
 
-        if (pass != "" && usuario != null) {
-            alert(`Registrado con Éxito ${usuario}!`)
-            break;
-        }
+
     }
+
+    alert(`Registrado con Éxito ${usuario}!`)
+
 }
 
-const registro = () => {
+const registrar = () => {
 
     let usuario = "";
 
@@ -39,57 +22,37 @@ const registro = () => {
 
         usuario = prompt(`¿Cuál es su Usuario?`)
 
-        if (usuario != "" && usuario != null) {
-            alert(`Cliente ${usuario}`)
-            password(usuario);
-
-            break;
-        }
-
-
     }
+    password(usuario);
 
 }
 
 
-const bienvenido = () => { }
+const bienvenido = () => {
+    alert("¡¡Bienvenido colega!!")
 
-alert("Antes que nada...");
+    let respuesta = prompt(`¿Con cuánta variedad de desayunos contamos actualmente?
+    
+    6
+    4
+    `);
 
-let respuesta = prompt(`¿Con cuánta variedad de desayunos contamos actualmente?
+    while (respuesta.toLowerCase() != "6" && respuesta != 1) {
+
+        alert("Averigua en nuestra página. Gracias.");
+
+        respuesta = prompt(`¿Con cuánta variedad de desayunos contamos actualmente?
     
     6
     4
     `);
 
 
-if (respuesta.toLowerCase() == "6" || parseInt(respuesta) == 1) {
-
-    registro();
-
-} else {
-
-    alert("Averigua en nuestra página. Gracias.");
-
-}
-
-let worthOne = "40% de descuento";
-let worthTwo = "60% de descuento";
-
-let userOrders = prompt('¿Para quienes van a ser los desayunos en el 2023?');
-alert(`Excelente, para ${userOrders.toUpperCase()} tenemos disponible...`);
-
-class User {
-    constructor(name, lastName, age) {
-        this.name = name.toUpperCase();
-        this.lastName = lastName.toUpperCase();
-        this.age = age;
     }
+
 }
 
-// funciones
-
-function oneDept(adults, kids) {
+function oneDiscount(adults, kids) {
     let total = adults + kids;
     if (adults <= 0 && kids !== 0) {
         alert('No puede hacer entrega para solo niños');
@@ -98,15 +61,15 @@ function oneDept(adults, kids) {
         alert('Sobrepasa la cantidad (6 personas), eliga la segunda opción para más envios');
     }
     else if (total <= 6) {
-        alert(`Obtendrás: $${worthOne}`);
+        alert(`Obtendrás: $${discountOne}`);
     }
     else (total <= 6)
-    { main(); }
+    { register(); }
 
     return total;
 }
 
-function twoDept(adults, kids) {
+function twoDiscount(adults, kids) {
     let total = adults + kids;
     if (adults <= 0 && kids !== 0) {
         alert('No se puede hacer entrega para solo niños');
@@ -116,7 +79,7 @@ function twoDept(adults, kids) {
         alert('Sobrepasa el limite de 12, la promoción es hasta máximo 12 desayunos');
     }
     else if (total <= 12) {
-        alert(`Obtendrás: $${worthTwo}`);
+        alert(`Obtendrás: $${discountTwo}`);
     }
     else (total <= 12)
     { main(); }
@@ -130,6 +93,9 @@ function showTotal(total) {
 }
 
 function showMenu(menu) {
+    let userOrders = prompt('¿Para quienes van a ser los desayunos en el 2023?');
+    alert(`Excelente, para ${userOrders.toUpperCase()} tenemos disponible...`);
+
     let options = prompt(`Eliga la opción más acorde...\n \n 1. Desayunos Sorpresas (hasta 6 en el próximo año) \n 2. Desayunos Sorpresas (hasta 12 en el próximo año) `);
     return options;
 }
@@ -145,11 +111,11 @@ function quotation() {
 
             switch (selectedOption) {
                 case 1:
-                    let totalOne = oneDept(adults, kids);
+                    let totalOne = oneDiscount(adults, kids);
                     showTotal(totalOne);
                     break;
                 case 2:
-                    let totalTwo = twoDept(adults, kids);
+                    let totalTwo = twoDiscount(adults, kids);
                     showTotal(totalTwo);
                     break;
                 default:
@@ -163,4 +129,21 @@ function quotation() {
     }
 }
 
-quotation();
+const openCodigo = () => {
+    let codigo = prompt("Bienvenido cliente, ingrese código para averiguar beneficios");
+
+    while (codigo != "desayunossecretos") {
+
+        codigo = prompt("Usted no es cliente actualmente")
+    }
+
+}
+
+const main = () => {
+    openCodigo();
+    bienvenido();
+    registrar();
+    quotation();
+
+}
+main();
