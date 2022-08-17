@@ -9,7 +9,6 @@ fetch("../data.json", { mode: "no-cors" })
             const li = document.createElement('li');
             li.innerHTML = `
                 <h2>${preparativo.nombre}</h2>
-                <p>codigo: ${preparativo.id}</p>
                <img src=${preparativo.img} />
                 <hr/>
             `;

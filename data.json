@@ -1,47 +1,38 @@
 [
     {
-        "id": 1,
-        "nombre": "Preparativo 1",
+        "nombre": "Preparativo antes de armar",
         "img": "../img/factura.jpg"
     },
     {
-        "id": 2,
-        "nombre": "Preparativo 2",
-        "img": "./img/galletas.jpg"
+        "nombre": "Preparativo antes de armar",
+        "img": "../img/galletas.jpg"
     },
     {
-        "id": 3,
-        "nombre": "Preparativo 3",
-        "img": "./img/medialuna.jpg"
+        "nombre": "Preparativo antes de armar",
+        "img": "../img/medialuna.jpg"
     },
     {
-        "id": 4,
-        "nombre": "Preparativo 4",
-        "img": "./img/prep1.jpg"
+        "nombre": "Preparativo antes de armar",
+        "img": "../img/prep1.jpg"
     },
     {
-        "id": 5,
-        "nombre": "Preparativo 5",
-        "img": "./img/prep8.jpg"
+        "nombre": "Preparativo antes de armar",
+        "img": "../img/prep8.jpg"
     },
     {
-        "id": 6,
-        "nombre": "Preparativo 6",
-        "img": "./img/prep7.jpg"
+        "nombre": "Preparativo antes de armar",
+        "img": "../img/prep7.jpg"
     },
     {
-        "id": 6,
-        "nombre": "Preparativo 7",
-        "img": "./img/prep9.jpg"
+        "nombre": "Preparativo antes de armar",
+        "img": "../img/prep9.jpg"
     },
     {
-        "id": 6,
-        "nombre": "Preparativo 8",
-        "img": "./img/prep5.jpg"
+        "nombre": "Preparativo antes de armar",
+        "img": "../img/prep5.jpg"
     },
     {
-        "id": 6,
-        "nombre": "Preparativo 9",
-        "img": "./img/prep3.jpg"
+        "nombre": "Preparativo antes de armar",
+        "img": "../img/prep3.jpg"
     }
 ]

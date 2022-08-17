@@ -85,36 +85,3 @@ for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', addProduct);
 }
 
-
-
-let usuario;
-let usuarioStorage = localStorage.getItem("usuario");
-
-if (usuarioStorage) {
-  usuario = JSON.parse(usuarioStorage);
-  Swal.fire({
-    title: 'Bienvenido ' + usuario,
-    width: 350,
-    padding: '3em',
-    color: '#716add',
-    backdrop: `
-    rgba(0,0,123,0.4)
-    left top
-    no-repeat
-  `
-  })
-} else {
-  usuario = Swal.fire({
-    title: 'Ingrese su nombre',
-    input: 'text',
-    inputAttributes: {
-      autocapitalize: 'off'
-    },
-    showCancelButton: true,
-    confirmButtonText: 'Confirmar',
-    showLoaderOnConfirm: true,
-
-  });
-
-  localStorage.setItem("usuario", JSON.stringify(usuario));
-}
