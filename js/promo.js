@@ -53,7 +53,6 @@ async function oneDiscount(adults, kids) {
         // alert(`Obtendrás: $${discountOne} `);
     }
 
-    return total;
 }
 
 async function twoDiscount(adults, kids) {
@@ -74,7 +73,6 @@ async function twoDiscount(adults, kids) {
         // alert(`Obtendrás: $${discountTwo} `);
     }
 
-    return total;
 }
 
 
@@ -175,6 +173,7 @@ const main = async () => {
     await openCodigo();
     await bienvenido();
     await registrar();
+    await password();
     await quotation();
 
 }
