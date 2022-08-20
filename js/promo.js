@@ -172,10 +172,10 @@ const bienvenido = async () => {
 
 }
 const main = async () => {
-    // await openCodigo();
-    // await bienvenido();
-    // await registrar();
-    quotation();
+    await openCodigo();
+    await bienvenido();
+    await registrar();
+    await quotation();
 
 }
 main();
