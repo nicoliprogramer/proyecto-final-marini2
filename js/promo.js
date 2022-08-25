@@ -90,7 +90,7 @@ async function showMenu() {
 
     let { value: options } = await Swal.fire({ title: `Eliga la opción más acorde...\n \n 1. Desayunos Sorpresas(hasta 6 en el próximo año) \n 2. Desayunos Sorpresas(hasta 12 en el próximo año)`, input: 'text' })
 
-    console.log(options);
+
 
     return options;
 }
@@ -114,7 +114,6 @@ async function quotation() {
 
             // selectedOption = parseInt(selectedOption);
 
-            console.log("tesad", selectedOption);
 
             switch (selectedOption) {
                 case "1":
@@ -133,7 +132,6 @@ async function quotation() {
             alert('Opción no válida');
         }
         selectedOption = await showMenu();
-        console.log("selectedOption2", selectedOption);
 
 
     }
