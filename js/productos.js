@@ -27,7 +27,6 @@ const fetchData = async () => {
   try {
     const res = await fetch('../productos.json')
     const data = await res.json()
-    // console.log(data);
     pintarCards(data)
   } catch (error) {
     console.log(error);
@@ -35,7 +34,6 @@ const fetchData = async () => {
 }
 
 const pintarCards = data => {
-  // console.log(data);
   data.forEach(producto => {
     templateCard.querySelector('h5').textContent = producto.title
     templateCard.querySelector('p').textContent = producto.precio
@@ -51,9 +49,6 @@ const pintarCards = data => {
 }
 
 const addCarrito = e => {
-  // console.log(e.target);
-  // console.log(e.target.classList.contains('btn-dark'));
-
   if (e.target.classList.contains('btn-dark')) {
     setCarrito(e.target.parentElement)
 
@@ -62,7 +57,6 @@ const addCarrito = e => {
 }
 
 const setCarrito = objeto => {
-  // console.log(objeto);
 
   const producto = {
     id: objeto.querySelector('.btn-dark').dataset.id,
@@ -81,10 +75,9 @@ const setCarrito = objeto => {
 
 
 const pintarCarrito = () => {
-  // console.log(carrito);
   items.innerHTML = ''
   Object.values(carrito).forEach(producto => {
-    templateCarrito.querySelector('th').textContent = producto.id //no viene de la base de datos
+    templateCarrito.querySelector('th').textContent = producto.id
     templateCarrito.querySelectorAll('td')[0].textContent = producto.title
     templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
     templateCarrito.querySelector('.btn-info').dataset.id = producto.id
@@ -112,8 +105,7 @@ const pintarFooter = () => {
   }
 
   const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
-  const nPrecio = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0) //acumulador
-  // console.log(nPrecio);
+  const nPrecio = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
 
 
   templateFooter.querySelectorAll('td')[0].textContent = nCantidad
@@ -132,12 +124,9 @@ const pintarFooter = () => {
 }
 
 const btnAccion = e => {
-  // console.log(e.target);
 
-  //boton + y -
   if (e.target.classList.contains('btn-info')) {
     console.log(carrito[e.target.dataset.id]);
-    // carrito[e.target.dataset.id]
     const producto = carrito[e.target.dataset.id]
     producto.cantidad = carrito[e.target.dataset.id].cantidad + 1
     carrito[e.target.dataset.id] = { ...producto }
